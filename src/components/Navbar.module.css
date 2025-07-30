@@ -1,0 +1,65 @@
+.navbar {
+  width: 100%;
+  padding: 20px 6%;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  font-size: 14px;
+  color: #efefef;
+  background-image: linear-gradient(
+    180deg,
+    rbga(0, 0, 0, 0.7) 10%,
+    transparent
+  );
+  z-index: 1;
+}
+
+.navLeft {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & ul {
+    list-style-type: none;
+    display: flex;
+    column-gap: 50px;
+  }
+
+  & li {
+    cursor: pointer;
+  }
+
+  & a {
+    text-decoration: none;
+    color: #efefef;
+  }
+
+  & img {
+    width: 90px;
+  }
+}
+
+.navRight {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  & > img {
+    width: 20px;
+    cursor: pointer;
+  }
+}
+
+.navbarProfile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  position: relative;
+}
+
+.navbarProfile .profile {
+  border-radius: 4px;
+  width: 40px;
+}
+

@@ -1,0 +1,16 @@
+.dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: max-content;
+  background-color: #191919;
+  padding: 18px 22px;
+  border-radius: 2px;
+  text-decoration: underline;
+  z-index: 1;
+
+  & p {
+    font-size: 13px;
+    cursor: pointer;
+  }
+}
