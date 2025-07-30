@@ -1,0 +1,10 @@
+.CardsList {
+    display: flex;
+    gap: 10px;
+    overflow-x: scroll;
+
+}
+
+.CardsList::-webkit-scrollbar {
+    display: none;
+}

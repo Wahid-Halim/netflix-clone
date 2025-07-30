@@ -1,9 +1,13 @@
-import React from 'react'
+import CardsList from "./cardsList";
+import styles from "./TitleCards.module.css";
 
-const TitleCards = () => {
+const TitleCards = ({ title, categories }) => {
   return (
-    <div>TitleCards</div>
-  )
-}
+    <section className={styles.titleCards}>
+      <h2>{title ? title : "Popular on Netflix"}</h2>
+      <CardsList />
+    </section>
+  );
+};
 
-export default TitleCards
+export default TitleCards;
