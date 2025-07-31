@@ -1,5 +1,5 @@
 import styles from "../components/Navbar.module.css";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import logo from "../assets/logo.png";
 import search_icon from "../assets/search_icon.svg";
@@ -11,9 +11,27 @@ import SignOutDropdown from "./SignOutDropdown";
 const Navbar = () => {
   const [isDropDownOpen, setIsDropdownOpen] = useState(false);
 
+  const navRef = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY >= 80) {
+        navRef.current?.classList.add(styles.navDark);
+      } else {
+        navRef.current?.classList.remove(styles.navDark);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <header>
-      <nav className={styles.navbar}>
+      <nav className={styles.navbar} ref={navRef}>
         <div className={styles.navLeft}>
           <img src={logo} alt="Logo" />
 

@@ -18,6 +18,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 20px;
 
   & ul {
     list-style-type: none;
@@ -63,3 +64,9 @@
   width: 40px;
 }
 
+
+
+.navDark {
+  background: #141414;
+  
+}

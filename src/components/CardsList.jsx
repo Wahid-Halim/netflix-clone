@@ -1,11 +1,17 @@
 import { useEffect, useRef } from "react";
 
-import cards_data from "../assets/cards/Cards_data.js";
 import styles from "./CardsList.module.css";
 
 import CardItem from "./CardItem.jsx";
+import { useQuery } from "@tanstack/react-query";
+import { getMovies } from "../services/dataTMBD.js";
 
-const CardsList = () => {
+const CardsList = ({ categories = "popular" }) => {
+  const { data, isPending } = useQuery({
+    queryKey: ["movies", categories],
+    queryFn: () => getMovies(categories),
+  });
+
   const cardsRef = useRef(null);
 
   const handleWheel = (e) => {
@@ -19,8 +25,13 @@ const CardsList = () => {
 
   return (
     <div className={styles.CardsList} ref={cardsRef}>
-      {cards_data.map((card, index) => (
-        <CardItem imgURL={card.image} moveName={card.name} key={index} />
+      {data?.results?.map((card) => (
+        <CardItem
+          imgURL={card.backdrop_path}
+          moveName={card.title}
+          key={card.id}
+          id={card.id}
+        />
       ))}
     </div>
   );
