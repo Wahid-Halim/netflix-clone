@@ -1,17 +1,45 @@
 .cardItem {
-position: relative;
+  position: relative;
 }
 
-.cardItem  p {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    
+.cardItem p {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
 }
 
 .cardItem img {
-    width: 240px;
-    border: 4px;
-    cursor: pointer;
+  width: 240px;
+  border: 4px;
+  cursor: pointer;
+}
 
+@media screen and (max-width: 800px) {
+  .cardItem img {
+    width: 200px;
+  }
+
+  .cardItem p {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .cardItem img {
+    width: 200px;
+  }
+
+  .cardItem p {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .cardItem img {
+    width: 165px;
+  }
+
+  .cardItem p {
+    font-size: 10px;
+  }
 }

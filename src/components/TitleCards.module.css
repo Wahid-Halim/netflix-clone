@@ -10,3 +10,22 @@
 .moreTitleCards {
   margin-top: 4rem;
 }
+
+@media screen and (max-width: 800px) {
+  .moreTitleCards {
+    margin-top: 20px;
+    margin-bottom: 0;
+
+    & h2 {
+      font-size: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .titleCards {
+    & h2 {
+     font-size: 15px;
+    }
+  }
+}

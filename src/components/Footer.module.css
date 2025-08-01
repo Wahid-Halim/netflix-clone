@@ -23,8 +23,22 @@
   }
 }
 
-
 .copyrightText {
-    color: gray;
-    font-size: 14px;
+  color: gray;
+  font-size: 14px;
+}
+
+@media screen and (max-width: 800px) {
+  .footer {
+    & ul {
+      grid-template-columns: repeat(2, auto);
+      gap: 8px;
+    }
+  }
+
+  .footerIcons {
+    & img {
+      width: 25px;
+    }
+  }
 }
