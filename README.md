@@ -1,12 +1,68 @@
-# React + Vite
+# 🎬 TMDB Movie App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a modern movie listing web app built with **React** and powered by the **TMDB (The Movie Database)** API. It allows users to browse movies by category, watch trailers, and view detailed information about each movie.
 
-Currently, two official plugins are available:
+## 🔗 Live Preview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[👉 View Live Demo](https://your-app-url.netlify.app)
 
-## Expanding the ESLint configuration
+## 🚀 Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- 🔐 User authentication using **Firebase Auth**
+- 📁 Firestore integration for user data
+- 📽️ Browse movies by categories like Trending, Top Rated, Upcoming, etc.
+- 🎞️ Click a movie to watch its trailer
+- 🔍 Search functionality (optional feature)
+- 🌓 Dark mode UI with clean design
+- 📱 Fully responsive for mobile and desktop
+
+## 🧰 Tech Stack
+
+- React (Vite)
+- React Router
+- Firebase Auth & Firestore
+- Axios
+- TMDB API
+- React Toastify (for alerts)
+- React Player (for YouTube trailers)
+- CSS Modules or Tailwind (depending on your setup)
+
+## 📝 Notes
+
+- You must have a [TMDB](https://www.themoviedb.org/) account and API key to fetch movie data.
+- You must also set up Firebase for authentication and Firestore if you're storing user data.
+
+## 🙋‍♂️ Author
+
+Developed by **Wahid Halim**
+
+## 📄 License
+
+This project is licensed under the MIT License.# 🎬 TMDB Movie App
+
+This is a modern movie listing web app built with **React** and powered by the **TMDB (The Movie Database)** API. It allows users to browse movies by category, watch trailers, and view detailed information about each movie.
+
+## 🔗 Live Preview
+
+[👉 View Live Demo](https://your-app-url.netlify.app)
+
+## 🚀 Features
+
+- 🔐 User authentication using **Firebase Auth**
+- 📁 Firestore integration for user data
+- 📽️ Browse movies by categories like Trending, Top Rated, Upcoming, etc.
+- 🎞️ Click a movie to watch its trailer
+- 📱 Fully responsive for mobile and desktop
+
+## 🧰 Tech Stack
+
+- React (Vite)
+- React Router
+- Firebase Auth & Firestore
+- TMDB API
+- React Toastify (for alerts)
+- CSS Modules
+
+## 🙋‍♂️ Author
+
+Developed by **Wahid Halim**
