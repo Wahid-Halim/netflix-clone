@@ -44,7 +44,7 @@ This is a modern movie listing web app built with **React** and powered by the *
 
 ## 🔗 Live Preview
 
-[👉 View Live Demo](https://nclonewahid.netlify.app/home)
+[👉 View Live Demo](https://nclonewahid.netlify.app/login)
 
 ## 🚀 Features
 
