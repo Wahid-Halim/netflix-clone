@@ -2,9 +2,7 @@
 
 This is a modern movie listing web app built with **React** and powered by the **TMDB (The Movie Database)** API. It allows users to browse movies by category, watch trailers, and view detailed information about each movie.
 
-## 🔗 Live Preview
 
-[👉 View Live Demo](https://your-app-url.netlify.app)
 
 ## 🚀 Features
 

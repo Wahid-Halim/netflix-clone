@@ -4,6 +4,8 @@ import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
+    // don't use it bro i was lazy putting it in .env file just don't touch it
+    
   apiKey: "AIzaSyB3nadtjq81ewd2EbrF0rPGNkk5D5gV4Tc",
   authDomain: "netflix-clone-7606e.firebaseapp.com",
   projectId: "netflix-clone-7606e",
