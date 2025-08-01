@@ -1,9 +1,11 @@
+const token = import.meta.env.VITE_TMDB_API_TOKEN;
+
+
 const options = {
   method: "GET",
   headers: {
     accept: "application/json",
-    Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxYWViOTlkMzNiNzRiOThjM2EwYzVlNDA3MGUzM2UwZSIsIm5iZiI6MTc1Mzg4MDgxNS40MzcsInN1YiI6IjY4OGExOGVmZjhiNWVkNmMyYmUxM2E4NiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.JuTTc9ex3D5zq-NQaViqOk5P4L1b_Dyci4gDQjrm4SA",
+    Authorization: `Bearer ${token}`,
   },
 };
 
@@ -13,6 +15,9 @@ export const getMovies = async (categories) => {
     `https://api.themoviedb.org/3/movie/${categories}?language=en-US&page=1`,
     options
   );
+  if (!res.ok) {
+    throw new Error(`Failed to fetch movies: ${res.status}`);
+  }
   const data = await res.json();
   return data;
 };
@@ -22,7 +27,9 @@ export const getMoviesVideo = async (id) => {
     `https://api.themoviedb.org/3/movie/${id}/videos?language=en-US`,
     options
   );
+  if (!res.ok) {
+    throw new Error(`Failed to fetch movie videos: ${res.status}`);
+  }
   const data = await res.json();
-
   return data;
 };
