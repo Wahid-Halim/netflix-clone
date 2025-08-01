@@ -78,6 +78,7 @@
 .formSwitch {
   margin-top: 40px;
   color: #737373;
+  font-size: 13px; 
 
   & span {
     margin-left: 6px;
@@ -85,4 +86,17 @@
     font-weight: 500;
     cursor: pointer;
   }
+}
+
+@media screen and (max-width: 500px) {
+  .login {
+    padding: 15px 5%;
+  }
+
+  .loginForm {
+    padding: 20px;
+    margin-top: 30px;
+  }
+
+  
 }

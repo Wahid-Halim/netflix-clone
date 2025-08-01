@@ -5,10 +5,12 @@ import Login from "./pages/Login";
 import Home from "./pages/Home";
 import Player from "./pages/Player";
 import AuthWrapper from "./components/AuthWrapper";
+import { ToastContainer, toast } from "react-toastify";
 
 const App = () => {
   return (
     <BrowserRouter>
+      <ToastContainer theme="dark" />
       <AuthWrapper>
         <Routes>
           <Route path="/login" element={<Login />} />

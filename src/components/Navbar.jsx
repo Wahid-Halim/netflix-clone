@@ -66,8 +66,7 @@ const Navbar = () => {
             <img
               src={caret_icon}
               alt="caret icon"
-              onMouseEnter={() => setIsDropdownOpen(true)}
-              // onMouseOut={() => setIsDropdownOpen(false)}
+              onMouseEnter={() => setIsDropdownOpen(state => !state)}
             />
             {isDropDownOpen && <SignOutDropdown />}
           </div>

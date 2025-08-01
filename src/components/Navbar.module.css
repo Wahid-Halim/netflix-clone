@@ -64,9 +64,32 @@
   width: 40px;
 }
 
-
-
 .navDark {
   background: #141414;
-  
+}
+
+@media screen and (max-width: 800px) {
+  .navbar {
+    padding: 20px 4%;
+
+    & img {
+      height: 25px;
+    }
+  }
+
+  .navLeft ul {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .navbar {
+    & img {
+      height: 20px;
+    }
+  }
+
+  .navRight {
+    gap: 10px;
+  }
 }

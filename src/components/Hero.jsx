@@ -26,7 +26,9 @@ const Hero = () => {
             More info
           </button>
         </div>
-        <TitleCards categories="now_playing" />
+        <div className={styles.titleCardWrapper}>
+          <TitleCards categories="now_playing" />
+        </div>
       </div>
     </div>
   );

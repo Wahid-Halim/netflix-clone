@@ -1,11 +1,15 @@
 import { useState } from "react";
 import logo from "../assets/logo.png";
 import styles from "./Login.module.css";
+import netflix_spinner from "../assets/netflix_spinner.gif";
 
 import { login, signUp } from "../services/auth";
+import Spinner from "../components/Spinner";
 
 const Login = () => {
   const [isForShowSignUp, setIsForShowSignUp] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
+
   const [userInfo, setUserInfo] = useState({
     firstName: "",
     email: "",
@@ -13,13 +17,17 @@ const Login = () => {
   });
 
   const handleSubmit = async (e) => {
+    setIsLoading(true);
     e.preventDefault();
     if (isForShowSignUp) {
-      await signUp(userInfo);
+      setIsLoading(false);
     } else {
       await login(userInfo);
     }
+    await signUp(userInfo);
   };
+
+  if (isLoading) return <Spinner />;
 
   return (
     <section className={styles.login}>
