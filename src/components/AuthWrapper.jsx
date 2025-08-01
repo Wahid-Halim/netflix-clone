@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../services/firebase";
+import Spinner from "./Spinner";
 
 const AuthWrapper = ({ children }) => {
   const navigate = useNavigate();
@@ -25,7 +26,7 @@ const AuthWrapper = ({ children }) => {
     return () => unsubscribe();
   }, [navigate, location]);
 
-  if (checkingAuth) return <div style={{ color: "white" }}>Loading...</div>; // simple loading UI
+  if (checkingAuth) return <Spinner />;
 
   return children;
 };

@@ -5,6 +5,7 @@ import styles from "./CardsList.module.css";
 import CardItem from "./CardItem.jsx";
 import { useQuery } from "@tanstack/react-query";
 import { getMovies } from "../services/dataTMBD.js";
+import Spinner from "./Spinner.jsx";
 
 const CardsList = ({ categories = "popular" }) => {
   const { data, isPending } = useQuery({

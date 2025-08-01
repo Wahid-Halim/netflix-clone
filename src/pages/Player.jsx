@@ -3,6 +3,7 @@ import styles from "./Player.module.css";
 import { getMoviesVideo } from "../services/dataTMBD";
 import { useNavigate, useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
+import Spinner from "../components/Spinner";
 
 const Player = () => {
   const navigate = useNavigate();
@@ -12,7 +13,7 @@ const Player = () => {
     queryKey: ["moviesVideo", id],
     queryFn: () => getMoviesVideo(id),
   });
-  if (isPending) return <p>Loading ....</p>;
+  if (isPending) return <Spinner />;
 
   const { name, key, published_at, type } = data.results[0];
 
