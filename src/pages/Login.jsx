@@ -1,8 +1,8 @@
 import { useState } from "react";
 import logo from "../assets/logo.png";
 import styles from "./Login.module.css";
-import { auth } from "../services/firebase";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+
+import { login, signUp } from "../services/auth";
 
 const Login = () => {
   const [isForShowSignUp, setIsForShowSignUp] = useState(true);
@@ -12,16 +12,13 @@ const Login = () => {
     password: "",
   });
 
-  console.log(userInfo.email);
-
-  const signIn = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
-    await createUserWithEmailAndPassword(
-      auth,
-      userInfo.email,
-      userInfo.password
-    );
+    if (isForShowSignUp) {
+      await signUp(userInfo);
+    } else {
+      await login(userInfo);
+    }
   };
 
   return (
@@ -29,9 +26,10 @@ const Login = () => {
       <img src={logo} alt="netflix logo" className={styles.loginLogo} />
       <div className={styles.loginForm}>
         <h1>{isForShowSignUp ? "Sign Up" : "Sign In"}</h1>
-        <form>
+        <form onSubmit={handleSubmit}>
           {isForShowSignUp && (
             <input
+              value={userInfo.firstName}
               type="text"
               placeholder="your name"
               onChange={(e) =>
@@ -43,6 +41,7 @@ const Login = () => {
             />
           )}
           <input
+            value={userInfo.email}
             type="email"
             placeholder="Email"
             onChange={(e) =>
@@ -53,6 +52,7 @@ const Login = () => {
             }
           />
           <input
+            value={userInfo.password}
             type="password"
             placeholder="Password"
             onChange={(e) =>
@@ -62,9 +62,7 @@ const Login = () => {
               }))
             }
           />
-          <button onClick={signIn}>
-            {isForShowSignUp ? "Sign Up" : "Sign In"}
-          </button>
+          <button>{isForShowSignUp ? "Sign Up" : "Sign In"}</button>
           <div className={styles.formHelp}>
             <div className={styles.checkboxContainer}>
               <input type="checkbox" />
