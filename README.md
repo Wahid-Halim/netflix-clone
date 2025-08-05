@@ -32,4 +32,4 @@ Developed by **Wahid Halim**
 
 ## 🔗 Live Preview
 
-[👉 View Live Demo](https://nclonewahid.netlify.app/login)
+[👉 View Live Demo](https://moviemunchapp.netlify.app/login)
